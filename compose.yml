@@ -1,0 +1,16 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-gift-sg
+    ports:
+      - "6501:5432"
+    volumes:
+      - progresDB:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+
+volumes:
+  progresDB:
+  redis:
+    driver: local
